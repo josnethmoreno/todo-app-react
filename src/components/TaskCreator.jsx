@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import '/src/stylesheets/TaskCreator.css'
 
-function TaskCreator() {
+function TaskCreator({ createNewTask }) {
   const [newTaskName, setNewTaskName] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault()
     localStorage.setItem('Task', newTaskName)
     setNewTaskName('')
+    createNewTask(newTaskName)
   }
 
   return (

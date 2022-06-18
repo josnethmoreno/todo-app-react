@@ -1,14 +1,23 @@
 import { useState, useEffect } from 'react'
-import { v4 as uuid } from 'uuid';
 import './App.css'
 import TaskCreator from '/src/components/TaskCreator.jsx'
+import TaskContent from '/src/components/TaskContent.jsx'
 
 function App() {
 
   const [taskItems, setTaskItems] = useState([])
 
   const createNewTask = (taskName) => {
-    setTaskItems([...taskItems, {name: taskName, done: false}])
+    if(!taskItems.find(task => task.name === taskName)) {
+      setTaskItems([...taskItems, {name: taskName, done: false}])
+    }
+  }
+
+  const toggleTask = (task) => {
+    console.log(task)
+    setTaskItems(
+      taskItems.map((t) => (t.name == task.name ? {...t, done: !t.done} : t))
+    )
   }
 
   useEffect(() => {
@@ -24,14 +33,7 @@ function App() {
     <div className="App">
 
       <TaskCreator createNewTask={createNewTask}/>
-
-      {
-        taskItems.map((task) => (
-          <div key={uuid()}>
-            {task.name}
-          </div>
-        ))
-      }
+      <TaskContent tasks={taskItems} toggleTask={toggleTask} />
 
     </div>
   )

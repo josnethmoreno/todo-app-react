@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid';
 import Task from '/src/components/Task.jsx'
 import '/src/stylesheets/TaskContent.css'
 
-export function TaskContent({ tasks, toggleTask, showCompleted }) {
+export function TaskContent({ name, tasks, toggleTask, showCompleted }) {
 
   const taskContentFilter = (doneValue) => {
     return(
@@ -16,10 +16,12 @@ export function TaskContent({ tasks, toggleTask, showCompleted }) {
 
   return (
     <div className="TaskContent">
-     <h3>Task {name}</h3>
-     {
-      taskContentFilter(showCompleted)
-     }
+     <h3 class="TaskContent-title">Task {name}</h3>
+     <div className="TaskContent-tasks">
+       {
+        taskContentFilter(showCompleted)
+       }
+     </div>
     </div>
   )
 }

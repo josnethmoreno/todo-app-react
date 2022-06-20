@@ -40,7 +40,7 @@ function App() {
     <div className="App">
 
       <TaskCreator createNewTask={createNewTask}/>
-      <TaskContent tasks={taskItems} toggleTask={toggleTask} showCompleted={false}/>
+      <TaskContent name='pending' tasks={taskItems} toggleTask={toggleTask} showCompleted={false}/>
 
       <VisibilityControl 
         setShowChompletedContent={setShowChompletedContent}
@@ -50,7 +50,7 @@ function App() {
 
       {
         showCompletedContent && (
-          <TaskContent tasks={taskItems} toggleTask={toggleTask} showCompleted={true}/>
+          <TaskContent name='completed' tasks={taskItems} toggleTask={toggleTask} showCompleted={true}/>
         )
       }
 

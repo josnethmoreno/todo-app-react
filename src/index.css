@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Candal:400,200');
+@import url('https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css');
+
+:root{
+	--rich-black-fogra-29: hsla(216, 100%, 4%, 1);
+	--baby-powder: hsla(38, 100%, 98%, 1);
+	--flickr-pink: hsla(333, 93%, 56%, 1);
+	--dodger-blue: hsla(212, 84%, 61%, 1);
+	--vivid-sky-blue: hsla(194, 85%, 62%, 1);
+	--imperial-red: hsla(353, 86%, 54%, 1);
+
+	--color-bg: var(--rich-black-fogra-29);
+	--color-text: var(--baby-powder);
+	--color-primary: var(--flickr-pink);
+	--color-secondary: var(--dodger-blue);
+	--color-danger: var(--imperial-red);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	color: var(--color-text);
+	box-sizing: border-box;
+	font-family: 'Candal', sans-serif;
+}
+
+body{
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: 'Candal', sans-serif;
+	font-weight: 200;
+}
+
+input{
+	outline: none;
+	background-color: transparent;
+}
+
+input[type="checkbox"]{
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	-webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: var(--color-primary);
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:hover::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked:hover::before {
+  transform: scale(0);
+}
+
+
+button{
+	border: none;
+	outline: none;
+	cursor: pointer;
+}

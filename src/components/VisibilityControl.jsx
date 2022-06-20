@@ -9,14 +9,19 @@ function VisibilityControl({ setShowChompletedContent, value, cleanTask }) {
 	}
 
 	return(
-		<div>
-      <input 
-	      type="checkbox" 
-	      onChange={e => setShowChompletedContent((prev) => !prev)}
-	      checked={value}
-      />
-      <label>Show tasks done</label>
-      <button onClick={handleDelete}>Delete</button>
+		<div className="VisibilityControl">
+			<div>
+	      <label>
+		      Show tasks done
+		      <input 
+			      type="checkbox" 
+			      onChange={e => setShowChompletedContent((prev) => !prev)}
+			      checked={value}
+			      id="checked"
+		      />
+	      </label>
+			</div>
+      <button className="VisibilityControl-button" onClick={handleDelete}><i className='bx bx-md bx-trash'></i></button>
     </div>
 	);
 }

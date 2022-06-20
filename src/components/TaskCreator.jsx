@@ -11,14 +11,15 @@ function TaskCreator({ createNewTask }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input 
+    <form onSubmit={handleSubmit} className="TaskCreator">
+      <input
+        className="TaskCreator-input"
         type="text" 
         placeholder="Enter a new task!" 
         value={newTaskName}
         onChange={(e) => setNewTaskName(e.target.value)} 
       />
-      <button>Add</button>
+      <button className="TaskCreator-button">+</button>
     </form>
   )
 }

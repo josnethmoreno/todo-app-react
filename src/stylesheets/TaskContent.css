@@ -1,0 +1,26 @@
+.TaskContent{
+	padding: 2rem 1rem;
+	background-color: #ffffff11;
+}
+
+.TaskContent-title{
+	display: inline-block;
+	position: relative;
+	font-size: 2rem;
+	line-height: 0;
+}
+
+.TaskContent-title::before{
+	content: '';
+	position: absolute;
+	bottom: -30px;
+	width: 40px;
+	height: 8px;
+	background-color: var(--color-secondary);
+}
+
+.TaskContent-tasks{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}

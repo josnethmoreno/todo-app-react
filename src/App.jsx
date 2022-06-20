@@ -16,7 +16,6 @@ function App() {
   }
 
   const toggleTask = (task) => {
-    console.log(task)
     setTaskItems(
       taskItems.map((t) => (t.name == task.name ? {...t, done: !t.done} : t))
     )

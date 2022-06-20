@@ -28,9 +28,8 @@
 	font-family: 'Arial';
 	font-size: 2rem;
 	font-weight: bold;
-	transition: .3s;
 }
 
 .TaskCreator-button:hover{
-	transform: scale(1.1);
+	transform: scale(1.05);
 }

@@ -12,7 +12,7 @@ function VisibilityControl({ setShowChompletedContent, value, cleanTask }) {
 		<div className="VisibilityControl">
 			<div>
 	      <label>
-		      Show tasks done
+		      Show completed tasks
 		      <input 
 			      type="checkbox" 
 			      onChange={e => setShowChompletedContent((prev) => !prev)}

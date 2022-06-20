@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import TaskCreator from '/src/components/TaskCreator.jsx'
-import TaskContent from '/src/components/TaskContent.jsx'
+import VisibilityControl from '/src/components/VisibilityControl.jsx'
+import { TaskContent } from '/src/components/TaskContent.jsx'
 
 function App() {
 
   const [taskItems, setTaskItems] = useState([])
+  const [showCompletedContent, setShowChompletedContent] = useState(false)
 
   const createNewTask = (taskName) => {
     if(!taskItems.find(task => task.name === taskName)) {
@@ -18,6 +20,11 @@ function App() {
     setTaskItems(
       taskItems.map((t) => (t.name == task.name ? {...t, done: !t.done} : t))
     )
+  }
+
+  const cleanTask = () => {
+    setTaskItems(taskItems.filter(task => !task.done))
+    setShowChompletedContent(false)
   }
 
   useEffect(() => {
@@ -33,7 +40,20 @@ function App() {
     <div className="App">
 
       <TaskCreator createNewTask={createNewTask}/>
-      <TaskContent tasks={taskItems} toggleTask={toggleTask} />
+      <TaskContent tasks={taskItems} toggleTask={toggleTask} showCompleted={false}/>
+
+      <VisibilityControl 
+        setShowChompletedContent={setShowChompletedContent}
+        value={showCompletedContent}
+        cleanTask={cleanTask} 
+      />
+
+      {
+        showCompletedContent && (
+          <TaskContent tasks={taskItems} toggleTask={toggleTask} showCompleted={true}/>
+        )
+      }
+
 
     </div>
   )

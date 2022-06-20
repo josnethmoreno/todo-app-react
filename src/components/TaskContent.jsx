@@ -2,16 +2,24 @@ import { v4 as uuid } from 'uuid';
 import Task from '/src/components/Task.jsx'
 import '/src/stylesheets/TaskContent.css'
 
-function TaskContent({ tasks, toggleTask }) {
+export function TaskContent({ tasks, toggleTask, showCompleted }) {
+
+  const taskContentFilter = (doneValue) => {
+    return(
+      tasks
+      .filter(task => task.done === doneValue)
+      .map((task) => (
+        <Task task={task} toggleTask={toggleTask} key={uuid()}/>
+      ))
+    )
+  }
+
   return (
     <div className="TaskContent">
-    	{
-        tasks.map((task) => (
-          <Task task={task} toggleTask={toggleTask} key={uuid()}/>
-        ))
-      }
+     <h3>Task {name}</h3>
+     {
+      taskContentFilter(showCompleted)
+     }
     </div>
   )
 }
-
-export default TaskContent

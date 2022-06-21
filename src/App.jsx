@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import TaskCreator from '/src/components/TaskCreator.jsx'
 import VisibilityControl from '/src/components/VisibilityControl.jsx'
+import Modal from '/src/components/Modal.jsx'
 import { TaskContent } from '/src/components/TaskContent.jsx'
 
 function App() {
 
   const [taskItems, setTaskItems] = useState([])
   const [showCompletedContent, setShowChompletedContent] = useState(false)
+  const [showModal, setShowModal] = useState(true)
 
   const createNewTask = (taskName) => {
     if(!taskItems.find(task => task.name === taskName)) {
@@ -21,9 +23,17 @@ function App() {
     )
   }
 
-  const cleanTask = () => {
+  const cleanTasks = () => {
     setTaskItems(taskItems.filter(task => !task.done))
     setShowChompletedContent(false)
+  }
+
+  const openModal = () => {
+    setShowModal(true);
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
   }
 
   useEffect(() => {
@@ -39,21 +49,35 @@ function App() {
     <div className="App">
 
       <TaskCreator createNewTask={createNewTask}/>
-      <TaskContent name='pending' tasks={taskItems} toggleTask={toggleTask} showCompleted={false}/>
+      <TaskContent 
+        name='pending' 
+        tasks={taskItems} 
+        toggleTask={toggleTask} 
+        showCompleted={false}
+      />
 
       <VisibilityControl 
         setShowChompletedContent={setShowChompletedContent}
         value={showCompletedContent}
-        cleanTask={cleanTask} 
+        openModal={openModal}
       />
 
       {
         showCompletedContent && (
-          <TaskContent name='completed' tasks={taskItems} toggleTask={toggleTask} showCompleted={true}/>
+          <TaskContent 
+            name='completed' 
+            tasks={taskItems} 
+            toggleTask={toggleTask} 
+            showCompleted={true}
+          />
         )
       }
 
-
+      <Modal 
+        showModal={showModal} 
+        closeModal={closeModal} 
+        cleanTasks={cleanTasks} 
+      />
     </div>
   )
 }

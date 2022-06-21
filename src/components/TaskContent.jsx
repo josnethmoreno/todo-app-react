@@ -22,7 +22,7 @@ export function TaskContent({ name, tasks, toggleTask, showCompleted }) {
   const taskMessage = () => {
     return(
       <div className="TaskContent-message">
-        <i class='bx bxs-tired bx-md'></i>
+        <i className='bx bxs-tired bx-md'></i>
         <h4>Aún no has añadido tareas nueva</h4>
       </div>
     )

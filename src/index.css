@@ -3,6 +3,7 @@
 
 :root{
 	--rich-black-fogra-29: hsla(216, 100%, 4%, 1);
+	--rich-black-fogra-30: hsla(216, 80%, 8%, 1);
 	--baby-powder: hsla(38, 100%, 98%, 1);
 	--flickr-pink: hsla(333, 93%, 56%, 1);
 	--dodger-blue: hsla(212, 84%, 61%, 1);
@@ -25,6 +26,7 @@
 }
 
 body{
+	position: relative;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-family: 'Candal', sans-serif;

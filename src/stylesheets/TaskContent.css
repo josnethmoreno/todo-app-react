@@ -1,6 +1,6 @@
 .TaskContent{
 	padding: 2rem 1rem;
-	background-color: #ffffff11;
+	background-color: var(--rich-black-fogra-30);
 	min-height: 176px !important;
 }
 

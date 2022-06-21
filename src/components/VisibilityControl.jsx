@@ -1,12 +1,6 @@
 import '/src/stylesheets/VisibilityControl.css'
 
-function VisibilityControl({ setShowChompletedContent, value, cleanTask }) {
-
-	const handleDelete = () => {
-		if(window.confirm('Are you sure want deleted your completed tasks?')){
-			cleanTask()
-		}
-	}
+function VisibilityControl({ setShowChompletedContent, value, openModal }) {
 
 	return(
 		<div className="VisibilityControl">
@@ -21,7 +15,9 @@ function VisibilityControl({ setShowChompletedContent, value, cleanTask }) {
 		      />
 	      </label>
 			</div>
-      <button className="VisibilityControl-button" onClick={handleDelete}><i className='bx bx-md bx-trash'></i></button>
+      <button className="VisibilityControl-button" onClick={openModal}>
+	      <i className='bx bx-md bx-trash'></i>
+      </button>
     </div>
 	);
 }

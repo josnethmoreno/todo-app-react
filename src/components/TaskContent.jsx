@@ -8,7 +8,7 @@ export function TaskContent({ name, tasks, toggleTask, showCompleted }) {
   const [taskContentEmpty, setTaskContentEmpty] = useState(true);
 
   const handleTaskContentEmpty = () => {
-    if (tasks.length === 0 || !(tasks.find( (task) => task.done === false))) {
+    if (!(tasks.find((task) => task.done === false))) {
       setTaskContentEmpty(true)
       return
     }

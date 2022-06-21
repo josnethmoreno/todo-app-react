@@ -6,8 +6,19 @@ function TaskCreator({ createNewTask }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setNewTaskName('')
+    if(!newTaskName.trim()) { 
+      e.target[0].classList.add('error')
+      e.target[0].placeholder = `You can enter a name`;
+      return
+    }
     createNewTask(newTaskName)
+    setNewTaskName('')
+  }
+
+  const handleInput = (e) => {
+    e.target.classList.remove('error')
+    e.target.placeholder = `Enter a new task!`;
+    setNewTaskName(e.target.value)
   }
 
   return (
@@ -17,7 +28,7 @@ function TaskCreator({ createNewTask }) {
         type="text" 
         placeholder="Enter a new task!" 
         value={newTaskName}
-        onChange={(e) => setNewTaskName(e.target.value)} 
+        onChange={handleInput}
       />
       <button className="TaskCreator-button">+</button>
     </form>

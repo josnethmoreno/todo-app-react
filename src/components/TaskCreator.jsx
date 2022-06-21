@@ -8,7 +8,7 @@ function TaskCreator({ createNewTask }) {
     e.preventDefault()
     if(!newTaskName.trim()) { 
       e.target[0].classList.add('error')
-      e.target[0].placeholder = `You can enter a name`;
+      e.target[0].placeholder = `You must enter a valid task`;
       return
     }
     createNewTask(newTaskName)

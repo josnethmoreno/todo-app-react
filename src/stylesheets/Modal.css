@@ -67,7 +67,7 @@
 }
 
 .Modal-button.primary{
-	background-color: var(--color-primary);
+	background-color: var(--color-danger);
 	transition: .1s;
 }
 

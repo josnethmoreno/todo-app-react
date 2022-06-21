@@ -9,7 +9,7 @@ function App() {
 
   const [taskItems, setTaskItems] = useState([])
   const [showCompletedContent, setShowChompletedContent] = useState(false)
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
 
   const createNewTask = (taskName) => {
     if(!taskItems.find(task => task.name === taskName)) {

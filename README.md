@@ -1,12 +1,12 @@
 <div id="top"></div>
 
-# Name 
-A simple Todo App created and built with ReactJS and native CSS, with an outgoing design:). The objective of this project was to put my knowledge in React into practice, making use of LocalStorage and Hooks such as useState and useEffect.
+# Todo App
+A simple Todo App created and built with ReactJS and native CSS, with an outgoing design. The objective of this project was to put my knowledge in React into practice, making use of LocalStorage and Hooks such as useState and useEffect.
 
 [Live Preview](https://project.netlify.app/)
 
 
-## Dependicies
+## Dependencies
 
 Install NPM or PNPM
 * npm

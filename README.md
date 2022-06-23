@@ -3,7 +3,9 @@
 # Todo App
 A simple Todo App created and built with ReactJS and native CSS, with an outgoing design. The objective of this project was to put my knowledge in React into practice, making use of LocalStorage and Hooks such as useState and useEffect.
 
-[Live Preview](https://project.netlify.app/)
+<img src="src/preview.png" alt="Preview UI">
+
+[Live Preview](https://todo-app-josneth.netlify.app/)
 
 
 ## Dependencies
@@ -26,7 +28,7 @@ Install NPM or PNPM
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/josnethmoreno/singleton.git
+   git clone https://github.com/josnethmoreno/todo-app-react.git
    ```
    
 2. Install NPM packages

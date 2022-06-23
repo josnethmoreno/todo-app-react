@@ -23,7 +23,7 @@ export function TaskContent({ name, tasks, toggleTask, showCompleted }) {
     return(
       <div className="TaskContent-message">
         <i className='bx bxs-tired bx-md'></i>
-        <h4>Aún no has añadido tareas nueva</h4>
+        <h4>You don't have any added tasks yet.</h4>
       </div>
     )
   }

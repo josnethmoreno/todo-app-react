@@ -3,7 +3,11 @@
 # Todo App
 A simple Todo App created and built with ReactJS and native CSS, with an outgoing design. The objective of this project was to put my knowledge in React into practice, making use of LocalStorage and Hooks such as useState and useEffect.
 
-<img src="src/preview.png" alt="Preview UI">
+### Built with
+![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](  https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
+
+![](src/preview.png)
 
 [Live Preview](https://todo-app-josneth.netlify.app/)
 
